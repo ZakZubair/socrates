@@ -19,7 +19,8 @@
     "object-assign": "^4.0.1",
     "redux": "^3.3.1",
     "setvalue": "1.0.0",
-    "sliced": "1.0.1"
+    "sliced": "1.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-eslint": "6.1.2",
@@ -34,7 +35,9 @@
   "scripts": {
     "lint": "snazzy",
     "pretest": "npm run lint",
-    "test": "devtool node_modules/mocha/bin/_mocha -qc -- ./test/"
+    "test": "devtool node_modules/mocha/bin/_mocha -qc -- ./test/",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "standard": {
     "parser": "babel-eslint",
@@ -47,5 +50,6 @@
       "after",
       "afterEach"
     ]
-  }
+  },
+  "snyk": true
 }
